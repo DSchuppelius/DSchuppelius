@@ -25,11 +25,11 @@
     <th colspan="2">GitHub Stats</th>
   </tr>
   <tr>
-    <td colspan="2" valign="top">
+    <td colspan="2" valign="top" align="center">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./profile/personal-stats-dark.svg">
         <source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-stats-light.svg">
-        <img width="100%" src="./profile/personal-stats-light.svg" alt="Personal GitHub Stats">
+        <img height="210" src="./profile/personal-stats-light.svg" alt="Personal GitHub Stats">
       </picture>
     </td>
   </tr>
