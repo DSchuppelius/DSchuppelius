@@ -6,6 +6,8 @@
 
 ## Business — Daniel-Jorg-Schuppelius
 
-| GitHub Stats | Top Languages |
-| ------------ | ------------- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="./profile/business-stats-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/business-stats-light.svg"><img src="./profile/business-stats-light.svg" alt="Business GitHub Stats"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="./profile/business-langs-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/business-langs-light.svg"><img src="./profile/business-langs-light.svg" alt="Business Top Languages"></picture> |
+Die Business-Projekte liegen in der GitHub-Organisation [Daniel-Jorg-Schuppelius](https://github.com/Daniel-Jorg-Schuppelius). Eine gemeinsame Benutzer-Rang- oder Sprachstatistik kann `github-readme-stats` für Organisationen nicht erzeugen.
+
+### Ausgewählte Business-Projekte
+
+- [datev-php-sdk](https://github.com/Daniel-Jorg-Schuppelius/datev-php-sdk)
