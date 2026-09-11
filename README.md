@@ -13,3 +13,6 @@ Dazu gehören unter anderem **DATEV-Integrationen, PHP-SDKs, API-Toolkits und we
 ### Ausgewählte Business-Projekte
 
 - [datev-php-sdk](https://github.com/Daniel-Jorg-Schuppelius/datev-php-sdk)
+- [lexoffice-php-sdk](https://github.com/Daniel-Jorg-Schuppelius/lexoffice-php-sdk)
+- [orgamax-php-sdk](https://github.com/Daniel-Jorg-Schuppelius/orgamax-php-sdk)
+- [php-api-toolkit](https://github.com/Daniel-Jorg-Schuppelius/php-api-toolkit)
