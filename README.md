@@ -2,18 +2,18 @@
 
 <table width="100%">
   <tr>
-    <th width="50%">Personal + Business</th>
-    <th width="50%">Top Languages</th>
+    <th width="56%">Personal + Business</th>
+    <th width="44%">Top Languages</th>
   </tr>
   <tr>
-    <td width="50%" valign="top">
+    <td width="56%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./profile/combined-overview-dark.svg">
         <source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/combined-overview-light.svg">
         <img width="100%" src="./profile/combined-overview-light.svg" alt="Combined GitHub Project Stats">
       </picture>
     </td>
-    <td width="50%" valign="top">
+    <td width="44%" valign="top">
       <picture>
         <source media="(prefers-color-scheme: dark)" srcset="./profile/personal-langs-dark.svg">
         <source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-langs-light.svg">
