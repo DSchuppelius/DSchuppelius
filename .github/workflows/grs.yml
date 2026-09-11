@@ -53,12 +53,98 @@ jobs:
           path: profile/personal-langs-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Generate combined personal and business overview
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          import urllib.request
+          from pathlib import Path
+          from xml.sax.saxutils import escape
+
+          TOKEN = os.environ["GITHUB_TOKEN"]
+          USER = "DSchuppelius"
+          ORG = "Daniel-Jorg-Schuppelius"
+
+          def github_get(url):
+              request = urllib.request.Request(
+                  url,
+                  headers={
+                      "Authorization": f"Bearer {TOKEN}",
+                      "Accept": "application/vnd.github+json",
+                      "X-GitHub-Api-Version": "2022-11-28",
+                      "User-Agent": "DSchuppelius-profile-stats",
+                  },
+              )
+              with urllib.request.urlopen(request) as response:
+                  return json.load(response)
+
+          def fetch_repos(url):
+              repos = []
+              page = 1
+              while True:
+                  separator = "&" if "?" in url else "?"
+                  batch = github_get(f"{url}{separator}per_page=100&page={page}")
+                  repos.extend(batch)
+                  if len(batch) < 100:
+                      break
+                  page += 1
+              return [repo for repo in repos if not repo.get("fork")]
+
+          personal = fetch_repos(f"https://api.github.com/users/{USER}/repos?type=owner&sort=full_name")
+          business = fetch_repos(f"https://api.github.com/orgs/{ORG}/repos?type=public&sort=full_name")
+
+          personal_stars = sum(repo.get("stargazers_count", 0) for repo in personal)
+          business_stars = sum(repo.get("stargazers_count", 0) for repo in business)
+          total_stars = personal_stars + business_stars
+          total_repos = len(personal) + len(business)
+          total_forks = sum(repo.get("forks_count", 0) for repo in personal + business)
+
+          Path("profile").mkdir(exist_ok=True)
+
+          def render(path, dark=False):
+              bg = "#0d1117" if dark else "#ffffff"
+              border = "#30363d" if dark else "#e4e2e2"
+              title = "#58a6ff" if dark else "#2f80ed"
+              text = "#c9d1d9" if dark else "#434d58"
+              muted = "#8b949e" if dark else "#586069"
+              value = "#f0f6fc" if dark else "#24292e"
+
+              svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-label="Combined GitHub project statistics">
+            <rect x="0.5" y="0.5" rx="4.5" width="494" height="194" fill="{bg}" stroke="{border}"/>
+            <style>
+              .title {{ font: 600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {title}; }}
+              .label {{ font: 400 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {text}; }}
+              .muted {{ font: 400 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {muted}; }}
+              .value {{ font: 600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {value}; }}
+              .star {{ fill: #e3b341; }}
+            </style>
+            <text x="25" y="35" class="title">Open Source Overview</text>
+            <text x="25" y="58" class="muted">{escape(USER)} + {escape(ORG)}</text>
+            <text x="25" y="91" class="label">★ Total Stars</text><text x="460" y="91" text-anchor="end" class="value">{total_stars}</text>
+            <text x="45" y="116" class="muted">Personal</text><text x="230" y="116" text-anchor="end" class="value">{personal_stars}</text>
+            <text x="270" y="116" class="muted">Business</text><text x="460" y="116" text-anchor="end" class="value">{business_stars}</text>
+            <text x="25" y="149" class="label">Repositories</text><text x="230" y="149" text-anchor="end" class="value">{total_repos}</text>
+            <text x="270" y="149" class="label">Forks</text><text x="460" y="149" text-anchor="end" class="value">{total_forks}</text>
+            <text x="25" y="177" class="muted">Public, non-fork repositories · updated daily</text>
+          </svg>'''
+              Path(path).write_text(svg, encoding="utf-8")
+
+          render("profile/combined-overview-light.svg", dark=False)
+          render("profile/combined-overview-dark.svg", dark=True)
+          print(f"Personal stars: {personal_stars}")
+          print(f"Business stars: {business_stars}")
+          print(f"Total stars: {total_stars}")
+          PY
+
       - name: Commit updated cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
 
-          git add profile/personal-*.svg
+          git add profile/personal-*.svg profile/combined-overview-*.svg
 
           if git diff --cached --quiet; then
             echo "No changes."
