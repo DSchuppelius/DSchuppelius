@@ -1,17 +1,29 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="900" height="135" viewBox="0 0 900 135" role="img" aria-label="Combined GitHub project statistics">
-  <rect x="0.5" y="0.5" rx="4.5" width="899" height="134" fill="#ffffff" stroke="#e4e2e2"/>
+<svg xmlns="http://www.w3.org/2000/svg" width="495" height="195" viewBox="0 0 495 195" role="img" aria-label="Combined GitHub project statistics">
+  <rect x="0.5" y="0.5" rx="4.5" width="494" height="194" fill="#ffffff" stroke="#e4e2e2"/>
   <style>
-    .title { font: 600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #2f80ed; }
-    .label { font: 400 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #434d58; }
-    .muted { font: 400 10px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #586069; }
-    .value { font: 600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #24292e; }
+    .title { font: 600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #2f80ed; }
+    .label { font: 400 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #434d58; }
+    .muted { font: 400 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #586069; }
+    .value { font: 600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: #24292e; }
+    .accent { fill: #4c71f2; }
   </style>
-  <text x="22" y="28" class="title">Open Source Overview</text>
-  <text x="22" y="46" class="muted">DSchuppelius + Daniel-Jorg-Schuppelius</text>
-  <text x="22" y="73" class="label">★ Total Stars</text><text x="878" y="73" text-anchor="end" class="value">14</text>
-  <text x="42" y="94" class="muted">Personal</text><text x="425" y="94" text-anchor="end" class="value">3</text>
-  <text x="475" y="94" class="muted">Business</text><text x="878" y="94" text-anchor="end" class="value">11</text>
-  <text x="22" y="116" class="label">Repositories <tspan class="value">25</tspan></text>
-  <text x="475" y="116" class="label">Forks <tspan class="value">1</tspan></text>
-  <text x="878" y="116" text-anchor="end" class="muted">Public, non-fork repositories · updated daily</text>
+  <text x="25" y="34" class="title">Open Source Overview</text>
+  <text x="25" y="55" class="muted">DSchuppelius + Daniel-Jorg-Schuppelius</text>
+
+  <text x="25" y="84" class="label accent">★</text>
+  <text x="47" y="84" class="label">Total Stars:</text>
+  <text x="455" y="84" text-anchor="end" class="value">14</text>
+
+  <text x="47" y="108" class="muted">Personal:</text>
+  <text x="220" y="108" text-anchor="end" class="value">3</text>
+  <text x="270" y="108" class="muted">Business:</text>
+  <text x="455" y="108" text-anchor="end" class="value">11</text>
+
+  <text x="25" y="139" class="label accent">◉</text>
+  <text x="47" y="139" class="label">Repositories:</text>
+  <text x="220" y="139" text-anchor="end" class="value">25</text>
+  <text x="270" y="139" class="label">Forks:</text>
+  <text x="455" y="139" text-anchor="end" class="value">1</text>
+
+  <text x="25" y="172" class="muted">Public, non-fork repositories · updated daily</text>
 </svg>
