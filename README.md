@@ -1,6 +1,6 @@
 ## Open Source — Personal + Business
 
-<picture><source media="(prefers-color-scheme: dark)" srcset="./profile/combined-overview-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/combined-overview-light.svg"><img src="./profile/combined-overview-light.svg" alt="Combined GitHub Project Stats"></picture>
+<picture><source media="(prefers-color-scheme: dark)" srcset="./profile/combined-overview-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/combined-overview-light.svg"><img width="100%" src="./profile/combined-overview-light.svg" alt="Combined GitHub Project Stats"></picture>
 
 ## Personal — DSchuppelius
 
