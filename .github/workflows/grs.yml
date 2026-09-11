@@ -18,6 +18,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
 
       - name: Generate personal stats (dark)
         uses: stats-organization/github-readme-stats-action@v2
@@ -51,42 +53,18 @@ jobs:
           path: profile/personal-langs-light.svg
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Generate business stats (dark)
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: username=Daniel-Jorg-Schuppelius&include_all_commits=true&show_icons=true&hide_border=true&theme=dark
-          path: profile/business-stats-dark.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate business stats (light)
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: stats
-          options: username=Daniel-Jorg-Schuppelius&include_all_commits=true&show_icons=true&hide_border=true&theme=buefy
-          path: profile/business-stats-light.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate business languages (dark)
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: username=Daniel-Jorg-Schuppelius&layout=compact&hide_border=true&theme=dark
-          path: profile/business-langs-dark.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Generate business languages (light)
-        uses: stats-organization/github-readme-stats-action@v2
-        with:
-          card: top-langs
-          options: username=Daniel-Jorg-Schuppelius&layout=compact&hide_border=true&theme=buefy
-          path: profile/business-langs-light.svg
-          token: ${{ secrets.GITHUB_TOKEN }}
-
       - name: Commit updated cards
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add profile/*.svg
-          git commit -m "Update GitHub README stats" || exit 0
-          git push
+
+          git add profile/personal-*.svg
+
+          if git diff --cached --quiet; then
+            echo "No changes."
+            exit 0
+          fi
+
+          git commit -m "Update GitHub README stats"
+          git pull --rebase origin main
+          git push origin main
