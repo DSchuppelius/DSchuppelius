@@ -4,9 +4,28 @@
 
 ## Personal — DSchuppelius
 
-| GitHub Stats | Top Languages |
-| ------------ | ------------- |
-| <picture><source media="(prefers-color-scheme: dark)" srcset="./profile/personal-stats-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-stats-light.svg"><img src="./profile/personal-stats-light.svg" alt="Personal GitHub Stats"></picture> | <picture><source media="(prefers-color-scheme: dark)" srcset="./profile/personal-langs-dark.svg"><source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-langs-light.svg"><img src="./profile/personal-langs-light.svg" alt="Personal Top Languages"></picture> |
+<table width="100%">
+  <tr>
+    <th width="50%">GitHub Stats</th>
+    <th width="50%">Top Languages</th>
+  </tr>
+  <tr>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./profile/personal-stats-dark.svg">
+        <source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-stats-light.svg">
+        <img width="100%" src="./profile/personal-stats-light.svg" alt="Personal GitHub Stats">
+      </picture>
+    </td>
+    <td width="50%">
+      <picture>
+        <source media="(prefers-color-scheme: dark)" srcset="./profile/personal-langs-dark.svg">
+        <source media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)" srcset="./profile/personal-langs-light.svg">
+        <img width="100%" src="./profile/personal-langs-light.svg" alt="Personal Top Languages">
+      </picture>
+    </td>
+  </tr>
+</table>
 
 ## Business-Projekte
 
