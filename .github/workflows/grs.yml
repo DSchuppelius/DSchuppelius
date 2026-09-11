@@ -112,22 +112,22 @@ jobs:
               muted = "#8b949e" if dark else "#586069"
               value = "#f0f6fc" if dark else "#24292e"
 
-              svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="195" viewBox="0 0 900 195" role="img" aria-label="Combined GitHub project statistics">
-            <rect x="0.5" y="0.5" rx="4.5" width="899" height="194" fill="{bg}" stroke="{border}"/>
+              svg = f'''<svg xmlns="http://www.w3.org/2000/svg" width="900" height="135" viewBox="0 0 900 135" role="img" aria-label="Combined GitHub project statistics">
+            <rect x="0.5" y="0.5" rx="4.5" width="899" height="134" fill="{bg}" stroke="{border}"/>
             <style>
-              .title {{ font: 600 18px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {title}; }}
-              .label {{ font: 400 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {text}; }}
-              .muted {{ font: 400 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {muted}; }}
-              .value {{ font: 600 14px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {value}; }}
+              .title {{ font: 600 16px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {title}; }}
+              .label {{ font: 400 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {text}; }}
+              .muted {{ font: 400 10px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {muted}; }}
+              .value {{ font: 600 12px -apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif; fill: {value}; }}
             </style>
-            <text x="25" y="35" class="title">Open Source Overview</text>
-            <text x="25" y="58" class="muted">{escape(USER)} + {escape(ORG)}</text>
-            <text x="25" y="91" class="label">★ Total Stars</text><text x="875" y="91" text-anchor="end" class="value">{total_stars}</text>
-            <text x="45" y="116" class="muted">Personal</text><text x="425" y="116" text-anchor="end" class="value">{personal_stars}</text>
-            <text x="475" y="116" class="muted">Business</text><text x="875" y="116" text-anchor="end" class="value">{business_stars}</text>
-            <text x="25" y="149" class="label">Repositories</text><text x="425" y="149" text-anchor="end" class="value">{total_repos}</text>
-            <text x="475" y="149" class="label">Forks</text><text x="875" y="149" text-anchor="end" class="value">{total_forks}</text>
-            <text x="25" y="177" class="muted">Public, non-fork repositories · updated daily</text>
+            <text x="22" y="28" class="title">Open Source Overview</text>
+            <text x="22" y="46" class="muted">{escape(USER)} + {escape(ORG)}</text>
+            <text x="22" y="73" class="label">★ Total Stars</text><text x="878" y="73" text-anchor="end" class="value">{total_stars}</text>
+            <text x="42" y="94" class="muted">Personal</text><text x="425" y="94" text-anchor="end" class="value">{personal_stars}</text>
+            <text x="475" y="94" class="muted">Business</text><text x="878" y="94" text-anchor="end" class="value">{business_stars}</text>
+            <text x="22" y="116" class="label">Repositories <tspan class="value">{total_repos}</tspan></text>
+            <text x="475" y="116" class="label">Forks <tspan class="value">{total_forks}</tspan></text>
+            <text x="878" y="116" text-anchor="end" class="muted">Public, non-fork repositories · updated daily</text>
           </svg>'''
               Path(path).write_text(svg, encoding="utf-8")
 
