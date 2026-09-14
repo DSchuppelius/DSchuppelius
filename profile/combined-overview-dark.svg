@@ -21,7 +21,7 @@
 
   <text x="25" y="139" class="label accent">◉</text>
   <text x="47" y="139" class="label">Repositories:</text>
-  <text x="220" y="139" text-anchor="end" class="value">25</text>
+  <text x="220" y="139" text-anchor="end" class="value">26</text>
   <text x="270" y="139" class="label">Forks:</text>
   <text x="455" y="139" text-anchor="end" class="value">1</text>
 
