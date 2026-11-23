@@ -23,7 +23,7 @@
   <text x="47" y="139" class="label">Repositories:</text>
   <text x="220" y="139" text-anchor="end" class="value">27</text>
   <text x="270" y="139" class="label">Forks:</text>
-  <text x="455" y="139" text-anchor="end" class="value">1</text>
+  <text x="455" y="139" text-anchor="end" class="value">7</text>
 
   <text x="25" y="172" class="muted">Public, non-fork repositories · updated daily</text>
 </svg>
